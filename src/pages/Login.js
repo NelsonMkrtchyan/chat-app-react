@@ -5,8 +5,8 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 export default class Login extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             error: null,
             email: "",
@@ -54,7 +54,6 @@ export default class Login extends Component {
         return (
             <>
                 <Header/>
-
                 <div className="container">
                     <form
                         className="mt-5 py-5 px-5"
@@ -110,9 +109,7 @@ export default class Login extends Component {
                     </form>
 
                 </div>
-
                 <Footer />
-
             </>
         );
     }

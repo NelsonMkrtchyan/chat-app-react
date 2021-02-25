@@ -1,7 +1,11 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro&display=swap');
+
 
 body {
-    font-family: 'Poppins', sans-serif;
+
+    font-family: 'Source Serif Pro', serif;
+    font-weight: bold;
+
     background-color: #fcfcfc;
 }
 
@@ -49,6 +53,10 @@ body {
 .btn-submit {
     background-color: #2e7d32;
     color: white;
+}
+
+.fa_custom{
+    color: darkred;
 }
 
 @media screen and (max-width: 767px) {

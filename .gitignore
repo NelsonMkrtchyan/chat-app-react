@@ -6,10 +6,12 @@
 .pnp.js
 
 ./package-lock.json
+package-lock.json
 
 # production
 /build
 ./.idea
+.idea
 # misc
 .DS_Store
 .env.local

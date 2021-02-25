@@ -74,15 +74,11 @@ export default class Chat extends Component {
         return (
             <div>
                 <Header/>
-
                 <div className="chat-area" ref={this.myRef}>
-
-                    {/* loading indicator */}
                     {this.state.loadingChats ? <div className="spinner-border text-success" role="status">
                         <span className="sr-only">Loading...</span>
                     </div> : ""}
 
-                    {/* chat area */}
                     {this.state.chats.map(chat => {
                         return <p key={chat.timestamp}
                                   className={"chat-bubble " + (this.state.user.uid === chat.uid ? "current-user" : "")}>

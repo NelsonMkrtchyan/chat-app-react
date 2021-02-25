@@ -4,7 +4,6 @@ import {
     BrowserRouter as Router,
     Switch,
     Redirect,
-    useParams
 } from "react-router-dom";
 import Home from '../pages/Home';
 import Profile from '../pages/Profile';
@@ -73,28 +72,13 @@ class App extends Component {
                 <Switch>
                     <Route exact path="/" component={Home} />
                     <PrivateRoute path="/profile" authenticated={this.state.authenticated} component={Profile} />
-                    <PrivateRoute path="/chat/:chatName" authenticated={this.state.authenticated} component={Chat}s/>
+                    <PrivateRoute path="/chat/:chatName" authenticated={this.state.authenticated} component={Chat}/>
                     <PublicRoute path="/signup" authenticated={this.state.authenticated} component={Signup} />
                     <PublicRoute path="/login" authenticated={this.state.authenticated} component={Login} />
                 </Switch>
-                {/*<Switch>*/}
-                {/*    <Route path="/chat/:chatName" children={<Child />} />*/}
-                {/*</Switch>*/}
             </Router>
         );
     }
-}
-
-function Child() {
-    // We can use the `useParams` hook here to access
-    // the dynamic pieces of the URL.
-    const { chatName } = useParams();
-
-    return (
-        <div>
-            <h3>ID: {chatName}</h3>
-        </div>
-    );
 }
 
 export default App;

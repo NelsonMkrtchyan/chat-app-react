@@ -7,8 +7,8 @@ import Footer from "../components/Footer";
 
 export default class SignUp extends Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             error: null,
             email: '',
@@ -34,7 +34,7 @@ export default class SignUp extends Component {
             db.ref(`users/`).push({
                 email: `${auth().currentUser.email}`,
                 uid: auth().currentUser.uid,
-                greeting:`Hello, I am  ${auth().currentUser.email}`,
+                greeting: `Hello, I am  ${auth().currentUser.email}`,
             })
 
         } catch (error) {
@@ -62,7 +62,7 @@ export default class SignUp extends Component {
     render() {
         return (
             <>
-                <Header />
+                <Header/>
                 <div className="container">
                     <form className="mt-5 py-5 px-5" onSubmit={this.handleSubmit}>
                         <h1>
@@ -72,11 +72,11 @@ export default class SignUp extends Component {
                         <p className="lead">Create an account.</p>
                         <div className="form-group">
                             <input className="form-control" placeholder="Email" name="email" type="email"
-                                   onChange={this.handleChange} value={this.state.email}></input>
+                                   onChange={this.handleChange} value={this.state.email}/>
                         </div>
                         <div className="form-group">
                             <input className="form-control" placeholder="Password" name="password"
-                                   onChange={this.handleChange} value={this.state.password} type="password"></input>
+                                   onChange={this.handleChange} value={this.state.password} type="password"/>
                         </div>
                         <div className="form-group">
                             {this.state.error ? <p className="text-danger">{this.state.error}</p> : null}
@@ -89,12 +89,11 @@ export default class SignUp extends Component {
                         <button className="btn btn-warning" type="button" onClick={this.githubSignIn}>
                             Sign up with GitHub
                         </button>
-                        <hr></hr>
+                        <hr/>
                         <p>If you already have an account? <Link to="/login">Login</Link></p>
                     </form>
                 </div>
-
-                <Footer />
+                <Footer/>
             </>
         )
     }
